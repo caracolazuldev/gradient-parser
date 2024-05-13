@@ -1,3 +1,6 @@
+# 
+# WARNING: Generated Configuration using - docker/gradient.yml
+# 
 name: gradient-parser
 services:
   generate:
@@ -5,8 +8,8 @@ services:
       - python
       - /app/generate_new_gradient.py
     environment:
-      BASE_ONE: '#000462'
-      BASE_TWO: '#DCEBFE'
+      - BASE_ONE
+      - BASE_TWO
     image: dev.caracolazul.python-colormath
     networks:
       default: null

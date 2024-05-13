@@ -12,20 +12,20 @@ services:
       default: null
     volumes:
       - type: bind
-        source: /home/mzd/Lab/gradient-parser
+        source: .
         target: /app
         bind:
           create_host_path: true
   report:
     build:
-      context: /home/mzd/Lab/gradient-parser/docker/colormath
+      context: ./docker/colormath
       dockerfile: Dockerfile
     image: dev.caracolazul.python-colormath
     networks:
       default: null
     volumes:
       - type: bind
-        source: /home/mzd/Lab/gradient-parser
+        source: .
         target: /app
         bind:
           create_host_path: true

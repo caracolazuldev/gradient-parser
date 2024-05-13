@@ -1,0 +1,18 @@
+
+services:
+  report:
+    image: dev.caracolazul.python-colormath
+    build:
+      context: docker/colormath
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+
+  generate:
+    image: dev.caracolazul.python-colormath
+    volumes:
+      - .:/app
+    command: python /app/generate_new_gradient.py
+    environment:
+      - BASE_ONE
+      - BASE_TWO
